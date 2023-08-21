@@ -1,7 +1,7 @@
-const { categoryService } = require("../services");
+const { bookService } = require("../services");
 
-/** create category */
-const createCategory = async (req, res) => {
+/** create book */
+const createBook = async (req, res) => {
   try {
     const reqBody = req.body;
 
@@ -10,23 +10,23 @@ const createCategory = async (req, res) => {
     //   throw new Error("User already created by this email!");
     // }
 
-    const category = await categoryService.createCategory(reqBody);
+    const book = await bookService.createBook(reqBody);
     // if (!category) {
     //   throw new Error("Something went wrong, please try again or later!");
     // }
 
     res.status(200).json({
       success: true,
-      message: "Category create successfully!",
-      data: { category },
+      message: "Book create successfully!",
+      data: { book },
     });
   } catch (error) {
     res.status(400).json({ success: false, message: error.message });
   }
 };
 
-/** Get category list */
-const getCategoryList = async (req, res) => {
+/** Get Book list */
+const getBookList = async (req, res) => {
   try {
     const { search, ...options } = req.query;
     let filter = {};
@@ -38,11 +38,11 @@ const getCategoryList = async (req, res) => {
       ];
     }
 
-    const getList = await categoryService.getCategoryList(filter, options);
+    const getList = await bookService.getBookList(filter, options);
 
     res.status(200).json({
       success: true,
-      message: "Get user list successfully!",
+      message: "Get book list successfully!",
       data: getList,
     });
   } catch (error) {
@@ -52,6 +52,6 @@ const getCategoryList = async (req, res) => {
 
 
 module.exports = {
-  createCategory,
-  getCategoryList,
+  createBook,
+  getBookList,
 };

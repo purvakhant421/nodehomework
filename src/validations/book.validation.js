@@ -1,15 +1,15 @@
 const Joi = require("joi");
 
-/** create user */
-const createCategory = {
+/** create book */
+const createBook = {
   body: Joi.object().keys({
-    category_name: Joi.string().required().trim(),
-    category_desc: Joi.string().required().trim(),
+    book_name: Joi.string().required().trim(),
+    book_writer: Joi.string().required().trim(),
   }),
 };
 
 /** GEt user list */
-const getCategoryList = {
+const getBookList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),
     sortBy: Joi.string().trim().allow(""),
@@ -29,7 +29,7 @@ const sendMail = {
 };
 
 module.exports = {
-  createCategory,
-  getCategoryList,
+  createBook,
+  getBookList,
   sendMail,
 };

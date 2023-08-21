@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-const categorySchema = new mongoose.Schema(
+const bookSchema = new mongoose.Schema(
     {
-        category_name : {
+        book_name : {
             type : String,
             trim :true
         },
-        category_desc : {
+        book_writer : {
             type : String,
             trim :true
         },
@@ -22,5 +22,5 @@ const categorySchema = new mongoose.Schema(
       }
 );
 
-const Category = mongoose.model("category", categorySchema);
-module.exports = Category;
+const Book = mongoose.model("book", bookSchema);
+module.exports = Book;

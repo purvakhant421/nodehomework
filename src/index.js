@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const http = require("http");
-const { connectDB } = require("./db/dbConnection");
+const { connectDB } = require("./db/dbconnection");
 const routes = require("./Routes/index.js");
 const config = require("./config/config");
 
@@ -23,9 +23,8 @@ app.use(bodyParser.json());
 
 app.use("/v1", routes);
 
-
 /** Database connection */
-connectDB()
+connectDB();
 
 /** create server using http */
 const server = http.createServer(app);

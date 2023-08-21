@@ -3,7 +3,7 @@ const config = require("../config/config");
 
 const connectDB = async () => {
   mongoose
-    .connect(config.mongodb.url, config.mongodb.options)
+    .connect("mongodb+srv://purvaratanapara48:8IUzYi6lS8S14D0j@cluster0.srcxaob.mongodb.net/", config.mongodb.options)
     .then((data) => {
       console.log("Database connection successfully!");
     })
