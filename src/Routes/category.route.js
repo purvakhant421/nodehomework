@@ -19,5 +19,18 @@ router.get(
   categoryController.getCategoryList
 );
 
+/** Get category details by id */
+router.get(
+  "/get-details/:categoryId",
+  validate(categoryValidation.getDetails),
+  categoryController.getCategoryDetails
+);
+
+/** Delete user */
+router.delete(
+  "/delete-category/:categoryId",
+  validate(categoryValidation.getDetails),
+  categoryController.deleteCategory
+);
 
 module.exports = router;

@@ -30,10 +30,30 @@ const getCategoryByEmail = async (email) => {
   return Category.findOne({ email });
 };
 
+/**
+ * Get category details by id
+ * @param {ObjectId} categoryId
+ * @returns {Promise<Category>}
+ */
+const getCategoryById = async (categoryId) => {
+  return Category.findById(categoryId);
+};
+
+/**
+ * Delete user
+ * @param {ObjectId} categoryId
+ * @returns {Promise<Category>}
+ */
+const deleteCategory = async (categoryId) => {
+  return Category.findByIdAndDelete(categoryId);
+};
+
 
 
 module.exports = {
   createCategory,
   getCategoryList,
   getCategoryByEmail,
+  getCategoryById,
+  deleteCategory,
 };

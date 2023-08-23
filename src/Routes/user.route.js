@@ -19,5 +19,20 @@ router.get(
   userController.getUserList
 );
 
+/** Get user details by id */
+router.get(
+  "/get-details/:userId",
+  validate(userValidation.getDetails),
+  userController.getUserDetails
+);
+
+/** Delete user */
+router.delete(
+  "/delete-user/:userId",
+  validate(userValidation.getDetails),
+  userController.deleteUser
+);
+
+
 
 module.exports = router;

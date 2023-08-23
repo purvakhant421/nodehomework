@@ -30,10 +30,30 @@ const getBookByEmail = async (email) => {
   return Book.findOne({ email });
 };
 
+/**
+ * Get book details by id
+ * @param {ObjectId} bookId
+ * @returns {Promise<Book>}
+ */
+const getBookById = async (bookId) => {
+  return Book.findById(bookId);
+};
+
+
+/**
+ * Delete user
+ * @param {ObjectId} bookId
+ * @returns {Promise<Book>}
+ */
+const deleteBook = async (bookId) => {
+  return Book.findByIdAndDelete(bookId);
+};
 
 
 module.exports = {
   createBook,
   getBookList,
   getBookByEmail,
+  getBookById,
+  deleteBook,
 };

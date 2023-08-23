@@ -50,8 +50,48 @@ const getBookList = async (req, res) => {
   }
 };
 
+/** Get book details by id */
+const getBookDetails = async (req, res) => {
+  try {
+    const getDetails = await bookService.getBookById(req.params.userId);
+    if (!getDetails) {
+      throw new Error("Book not found!");
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Book details get successfully!",
+      data: getDetails,
+    });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
+/** Delete book */
+const deleteBook = async (req, res) => {
+  try {
+    const bookId = req.params.bookId;
+    const bookExists = await bookService.getBookById(bookId);
+    if (!bookExists) {
+      throw new Error("Book not found!");
+    }
+
+    await bookService.deleteBook(bookId);
+
+    res.status(200).json({
+      success: true,
+      message: "Book delete successfully!",
+    });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
 
 module.exports = {
   createBook,
   getBookList,
+  getBookDetails,
+  deleteBook,
 };

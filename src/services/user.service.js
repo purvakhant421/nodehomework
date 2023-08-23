@@ -30,10 +30,30 @@ const getUserByEmail = async (email) => {
   return User.findOne({ email });
 };
 
+/**
+ * Get user details by id
+ * @param {ObjectId} userId
+ * @returns {Promise<User>}
+ */
+const getUserById = async (userId) => {
+  return User.findById(userId);
+};
+
+
+/**
+ * Delete user
+ * @param {ObjectId} userId
+ * @returns {Promise<User>}
+ */
+const deleteUser = async (userId) => {
+  return User.findByIdAndDelete(userId);
+};
 
 
 module.exports = {
   createUser,
   getUserList,
   getUserByEmail,
+  getUserById,
+  deleteUser,
 };

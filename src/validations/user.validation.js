@@ -20,6 +20,13 @@ const getUserList = {
   }),
 };
 
+/** Get user details by id */
+const getDetails = {
+  params: Joi.object().keys({
+    userId: Joi.string().required().trim(),
+  }),
+};
+
 
 /** Send mail */
 const sendMail = {
@@ -33,5 +40,6 @@ const sendMail = {
 module.exports = {
   createUser,
   getUserList,
+  getDetails,
   sendMail,
 };

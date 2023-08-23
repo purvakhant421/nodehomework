@@ -18,6 +18,13 @@ const getBookList = {
   }),
 };
 
+/** Get book details by id */
+const getDetails = {
+  params: Joi.object().keys({
+    bookId: Joi.string().required().trim(),
+  }),
+};
+
 
 /** Send mail */
 const sendMail = {
@@ -31,5 +38,6 @@ const sendMail = {
 module.exports = {
   createBook,
   getBookList,
+  getDetails,
   sendMail,
 };
