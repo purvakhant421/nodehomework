@@ -8,3 +8,7 @@ module.exports.Stationery = require("./stationery.model.js");
 module.exports.School = require("./school.model.js");
 module.exports.Travel = require("./travel.model.js");
 module.exports.pharmacy = require("./pharmacy.model.js");
+module.exports.jewellery = require("./jewellery.model.js");
+module.exports.movie = require("./movie.model.js");
+module.exports.movie = require("./music.model.js");
+module.exports.grocery = require("./grocery.model.js");

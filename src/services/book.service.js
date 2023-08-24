@@ -1,59 +1,59 @@
-const { Book } = require("../models");
+const { Jewellery } = require("../models");
 
 /**
  * Create category
  * @param {object} reqBody
- * @returns {Promise<Book>}
+ * @returns {Promise<Jewellery>}
  */
-const createBook = async (reqBody) => {
-  return Book.create(reqBody);
+const createJewellery = async (reqBody) => {
+  return Jewellery.create(reqBody);
 };
 
 /**
  * Get user list
  * @param {object} filter
  * @param {object} options
- * @returns {Promise<Book>}
+ * @returns {Promise<Jewellery>}
  */
-const getBookList = async (filter, options) => {
+const getJewelleryList = async (filter, options) => {
   const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
 
-  return Book.find(filter).skip(skip).limit(options.limit).select("-password");
+  return Jewellery.find(filter).skip(skip).limit(options.limit).select("-password");
 };
 
 /**
  * Get user by email
  * @param {string} email
- * @returns {Promise<Book>}
+ * @returns {Promise<Jewellery>}
  */
-const getBookByEmail = async (email) => {
-  return Book.findOne({ email });
+const getJewelleryByEmail = async (email) => {
+  return Jewellery.findOne({ email });
 };
 
 /**
- * Get book details by id
- * @param {ObjectId} bookId
- * @returns {Promise<Book>}
+ * Get Jewellery details by id
+ * @param {ObjectId} jewelleryId
+ * @returns {Promise<Jewellery>}
  */
-const getBookById = async (bookId) => {
-  return Book.findById(bookId);
+const getJewelleryById = async (jewelleryId) => {
+  return Jewellery.findById(jewelleryId);
 };
 
 
 /**
- * Delete user
- * @param {ObjectId} bookId
- * @returns {Promise<Book>}
+ * Delete Jewellery
+ * @param {ObjectId} jewelleryId
+ * @returns {Promise<Jewellery>}
  */
-const deleteBook = async (bookId) => {
-  return Book.findByIdAndDelete(bookId);
+const deleteJewellery = async (jewelleryId) => {
+  return Jewellery.findByIdAndDelete(jewelleryId);
 };
 
 
 module.exports = {
-  createBook,
-  getBookList,
-  getBookByEmail,
-  getBookById,
-  deleteBook,
+  createJewellery,
+  getJewelleryList,
+  getJewelleryByEmail,
+  getJewelleryById,
+  deleteJewellery,
 };
