@@ -5,15 +5,7 @@ const createHotel = async (req, res) => {
   try {
     const reqBody = req.body;
 
-    const hotelExists = await hotelService.getHotelByEmail(reqBody.email);
-    if (hotelExists) {
-      throw new Error("Hotel already created by this email!");
-    }
-
     const hotel = await hotelService.createHotel(reqBody);
-    if (!hotel) {
-      throw new Error("Something went wrong, please try again or later!");
-    }
 
     res.status(200).json({
       success: true,
