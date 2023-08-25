@@ -6,7 +6,7 @@ const createBus = {
     bus_name: Joi.string().required().trim(),
     bus_route: Joi.string().required().trim(),
     bus_number: Joi.string().required().trim(),
-    bus_ticket_price: Joi.string().required().trim(),
+    bus_ticket_price: Joi.number().integer().required(),
   }),
 };
 

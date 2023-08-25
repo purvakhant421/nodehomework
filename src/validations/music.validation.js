@@ -6,7 +6,6 @@ const createMusic = {
     music_name: Joi.string().required().trim(),
     music_artist: Joi.string().required().trim(),
     music_album: Joi.string().required().trim(),
-    music_release_date: Joi.string().required().trim(),
   }),
 };
 

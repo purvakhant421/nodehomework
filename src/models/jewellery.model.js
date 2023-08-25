@@ -16,8 +16,8 @@ const jewellerySchema = new mongoose.Schema(
             trim :true
         },
         jewellery_quantity : {
-            type : String,
-            trim :true
+            type : Number,
+            default :  0
         },
         is_active: {
             type: Boolean,

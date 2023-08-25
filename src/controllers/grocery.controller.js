@@ -76,7 +76,7 @@ const deleteGrocery = async (req, res) => {
       throw new Error("Grocery not found!");
     }
 
-    await groceryService.deletegrocery(groceryId);
+    await groceryService.deleteGrocery(groceryId);
 
     res.status(200).json({
       success: true,

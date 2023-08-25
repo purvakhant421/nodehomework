@@ -5,13 +5,13 @@ const createMovie = async (req, res) => {
   try {
     const reqBody = req.body;
 
-    // const categoryExists = await categoryService.getCategoryByEmail(reqBody.email);
-    // if (categoryExists) {
+    // const movieExists = await movieService.getmovieByEmail(reqBody.email);
+    // if (movieExists) {
     //   throw new Error("movie already created by this email!");
     // }
 
     const movie = await movieService.createMovie(reqBody);
-    // if (!category) {
+    // if (!movie) {
     //   throw new Error("Something went wrong, please try again or later!");
     // }
 
@@ -52,7 +52,7 @@ const getMovieList = async (req, res) => {
 /** Get movie details by id */
 const getMovieDetails = async (req, res) => {
   try {
-    const getDetails = await movieService.getMovieById(req.params.categoryId);
+    const getDetails = await movieService.getMovieById(req.params.movieId);
     if (!getDetails) {
       throw new Error("Movie not found!");
     }

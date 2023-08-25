@@ -7,17 +7,13 @@ const movieSchema = new mongoose.Schema(
             type : String,
             trim :true
         },
-        movie_title : {
-            type : String,
-            trim :true
-        },
         movie_director : {
             type : String,
             trim :true
         },
         movie_rating : {
-            type : String,
-            trim :true
+            type : Number,
+            default : 0
         },
         movie_comment : {
             type : String,

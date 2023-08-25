@@ -7,7 +7,7 @@ const createHotel = {
     hotel_address: Joi.string().required().trim(),
     hotel_location: Joi.string().required().trim(),
     hotel_service: Joi.string().required().trim(),
-    hotel_rating: Joi.string().required().trim(),
+    hotel_rating: Joi.number().integer().required(),
   }),
 };
 

@@ -15,10 +15,6 @@ const musicSchema = new mongoose.Schema(
             type : String,
             trim :true
         },
-        music_release_date : {
-            type : String,
-            trim :true
-        },
         is_active: {
             type: Boolean,
             default: true,

@@ -6,7 +6,7 @@ const createJewellery = {
     jewellery_shop_name: Joi.string().required().trim(),
     jewellery_name: Joi.string().required().trim(),
     jewellery_design: Joi.string().required().trim(),
-    jewellery_quantity: Joi.string().required().trim(),
+    jewellery_quantity: Joi.number().integer().required(),
   }),
 };
 

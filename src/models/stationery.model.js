@@ -16,8 +16,8 @@ const stationerySchema = new mongoose.Schema(
             trim :true
         },
         stationery_items_price : {
-            type : String,
-            trim :true
+            type : Number,
+            default : 0
         },
         is_active: {
             type: Boolean,

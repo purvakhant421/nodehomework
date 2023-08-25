@@ -6,7 +6,7 @@ const createStationery = {
     stationery_name: Joi.string().required().trim(),
     stationery_address: Joi.string().required().trim(),
     stationery_items_name: Joi.string().required().trim(),
-    stationery_items_price: Joi.string().required().trim(),
+    stationery_items_price: Joi.number().integer().required(),
   }),
 };
 

@@ -6,7 +6,7 @@ const createPharmacy = {
     pharmacy_name: Joi.string().required().trim(),
     pharmacy_address: Joi.string().required().trim(),
     pharmacy_product_name: Joi.string().required().trim(),
-    pharmacy_product_price: Joi.string().required().trim(),
+    pharmacy_product_price: Joi.number().integer().required(),
   }),
 };
 

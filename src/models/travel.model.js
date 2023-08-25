@@ -16,8 +16,8 @@ const travelSchema = new mongoose.Schema(
             trim :true
         },
         travel_passenger_age : {
-            type : String,
-            trim :true
+            type : Number,
+            default : 0
         },
         is_active: {
             type: Boolean,

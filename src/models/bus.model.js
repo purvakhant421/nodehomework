@@ -16,8 +16,8 @@ const busSchema = new mongoose.Schema(
             trim :true
         },
         bus_ticket_price : {
-            type : String,
-            trim :true
+            type : Number,
+            default: 0
         },
         is_active: {
             type: Boolean,

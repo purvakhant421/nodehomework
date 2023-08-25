@@ -68,7 +68,7 @@ const deletePharmacy = async (req, res) => {
       throw new Error("Pharmacy not found!");
     }
 
-    await pharmacyService.deletepharmacy(pharmacyId);
+    await pharmacyService.deletePharmacy(pharmacyId);
 
     res.status(200).json({
       success: true,

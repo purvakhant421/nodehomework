@@ -5,8 +5,8 @@ const createGrocery = {
   body: Joi.object().keys({
     grocery_store_name: Joi.string().required().trim(),
     grocery_name: Joi.string().required().trim(),
-    grocery_price: Joi.string().required().trim(),
-    grocery_quantity: Joi.string().required().trim(),
+    grocery_price: Joi.number().integer().required(),
+    grocery_quantity: Joi.number().integer().required(),
   }),
 };
 

@@ -6,7 +6,7 @@ const createTravel = {
     travel_name: Joi.string().required().trim(),
     travel_destination: Joi.string().required().trim(),
     travel_passenger_name: Joi.string().required().trim(),
-    travel_passenger_age: Joi.string().required().trim(),
+    travel_passenger_age: Joi.number().integer().required(),
   }),
 };
 

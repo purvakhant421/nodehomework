@@ -1,4 +1,4 @@
-const { Movie, movie } = require("../models");
+const { Movie } = require("../models");
 
 /**
  * Create movie
@@ -45,7 +45,7 @@ const getMovieById = async (movieId) => {
  * @returns {Promise<Movie>}
  */
 const deleteMovie = async (movieId) => {
-  return movie.findByIdAndDelete(movieId);
+  return Movie.findByIdAndDelete(movieId);
 };
 
 

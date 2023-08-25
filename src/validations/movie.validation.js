@@ -4,9 +4,8 @@ const Joi = require("joi");
 const createMovie = {
   body: Joi.object().keys({
     movie_name: Joi.string().required().trim(),
-    movie_title: Joi.string().required().trim(),
     movie_director: Joi.string().required().trim(),
-    movie_rating: Joi.string().required().trim(),
+    movie_rating: Joi.number().integer().required(),
     movie_comment: Joi.string().required().trim(),
   }),
 };

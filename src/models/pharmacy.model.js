@@ -16,8 +16,8 @@ const pharmacySchema = new mongoose.Schema(
             trim :true
         },
         pharmacy_product_price : {
-            type : String,
-            trim :true
+            type : Number,
+            default : 0
         },
         is_active: {
             type: Boolean,
