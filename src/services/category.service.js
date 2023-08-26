@@ -16,9 +16,9 @@ const createCategory = async (reqBody) => {
  * @returns {Promise<Category>}
  */
 const getCategoryList = async (filter, options) => {
-  const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
+  //const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
 
-  return Category.find(filter).skip(skip).limit(options.limit).select("-password");
+  return Category.find({$or:[{is_active:true}]})
 };
 
 /**

@@ -12,13 +12,12 @@ const createStationery = async (reqBody) => {
 /**
  * Get stationery list
  * @param {object} filter
- * @param {object} options
+ * @param {object} optionss
  * @returns {Promise<Stationery>}
  */
 const getStationeryList = async (filter, options) => {
-  const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
 
-  return Stationery.find(filter).skip(skip).limit(options.limit).select("-password");
+  return Stationery.find({$or:[{is_active:true}]})
 };
 
 /**

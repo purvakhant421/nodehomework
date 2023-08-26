@@ -16,9 +16,9 @@ const createPharmacy = async (reqBody) => {
  * @returns {Promise<Pharmacy>}
  */
 const getPharmacyList = async (filter, options) => {
-  const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
+  //const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
 
-  return Pharmacy.find(filter).skip(skip).limit(options.limit).select("-password");
+  return Pharmacy.find({$or:[{is_active:true}]})
 };
 
 /**

@@ -16,9 +16,9 @@ const createBus = async (reqBody) => {
  * @returns {Promise<Bus>}
  */
 const getBusList = async (filter, options) => {
-  const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
+  //const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
 
-  return Bus.find(filter).skip(skip).limit(options.limit).select("-password");
+  return Bus.find({$or:[{is_active:true}]})
 };
 
 /**
